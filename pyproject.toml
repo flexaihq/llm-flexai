@@ -1,0 +1,33 @@
+[project]
+name = "llm-flexai"
+version = "0.1.0"
+description = "LLM plugin for models hosted by FlexAI"
+readme = "README.md"
+authors = [{name = "FlexAI", email = "sundar.bala@flex.ai"}]
+license = "MIT"
+requires-python = ">=3.10"
+classifiers = []
+dependencies = [
+    "llm>=0.26",
+    "httpx",
+    "openai",
+]
+
+[project.urls]
+Homepage = "https://github.com/flexaihq/llm-flexai"
+Changelog = "https://github.com/flexaihq/llm-flexai/releases"
+Issues = "https://github.com/flexaihq/llm-flexai/issues"
+CI = "https://github.com/flexaihq/llm-flexai/actions"
+
+[project.entry-points.llm]
+flexai = "llm_flexai"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-httpx", "httpx2-pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["tests"]
