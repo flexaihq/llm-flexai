@@ -1,0 +1,13 @@
+name: Check Repo Compliance
+on:
+  merge_group:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    uses: flexaihq/actions/.github/workflows/repo-compliance-workflow.yaml@main
